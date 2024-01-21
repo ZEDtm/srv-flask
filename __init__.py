@@ -4,5 +4,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 
 
+@app.route('/')
+def start():
+    return {'Hello': 'world!'}
+
+
 if __name__ == '__main__':
-    app
+    app.run('localhost', 5000, debug=True)
